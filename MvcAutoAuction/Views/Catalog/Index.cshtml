@@ -1,0 +1,27 @@
+﻿@model IEnumerable< MvcAutoAuction.Models.Brand>
+
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h3>Browse Brands</h3>
+
+<p>
+    Select from @Model.Count() brands:</p>
+<ul>
+    @foreach (var brand in Model)
+    {
+        <li>@Html.ActionLink(brand.Name, "Browse", new { brand = brand.Name })</li>
+        
+      /*  <li><a href="/Catalog/Browse?brand=BMW">BMW</a></li>
+        <li><a href="/Catalog/Browse?brand=Mercedes">Mercedes</a></li>
+        <li><a href="/Catalog/Browse?brand=VW">VW</a></li>
+        <li><a href="/Catalog/Browse?brand=Audi">Audi</a></li>                
+        <li><a href="/Catalog/Browse?brand=Ford">Ford</a></li>
+        <li><a href="/Catalog/Browse?brand=Fiat">Fiat</a></li>
+        <li><a href="/Catalog/Browse?brand=Honda">Honda</a></li>
+        <li><a href="/Catalog/Browse?brand=Toyota">Toyota</a></li>
+        <li><a href="/Catalog/Browse?brand=Mazda">Mazda</a></li>
+        <li><a href="/Catalog/Browse?brand=Hyunday">Hyunday</a></li>  */      
+    }    
+</ul>

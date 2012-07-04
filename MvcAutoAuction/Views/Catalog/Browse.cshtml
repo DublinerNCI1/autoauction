@@ -1,0 +1,21 @@
+﻿@model MvcAutoAuction.Models.Brand
+
+@{
+    ViewBag.Title = "Browse Cars";
+}
+
+<div class="brand">
+    <h3><em>@Model.Name</em> Cars</h3>
+
+    <ul id="car-list">
+        @foreach (var car in Model.Cars)
+        {
+            <li>
+                <a href="@Url.Action("Details", new { id = car.CarId })"> 
+                    <img alt="@car.Title" src="@car.CarArtUrl" />                
+                    <span>@car.Title</span> 
+                </a>
+            </li>
+        }
+    </ul>
+</div>

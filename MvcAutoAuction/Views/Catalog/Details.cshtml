@@ -1,0 +1,30 @@
+﻿@model MvcAutoAuction.Models.Car
+
+@{
+    ViewBag.Title = "Car -" + Model.Title; ;
+}
+
+<h2>@Model.Title</h2>
+
+<p> 
+    <img alt="@Model.Title" src="@Model.CarArtUrl" />
+</p>
+
+<div id="car-details">
+    <p>
+        <em>Brand:</em> 
+        @Model.Brand.Name
+    </p>
+    <p>
+        <em>Auto:</em> 
+        @Model.Auto.Name
+    </p>
+    <p>
+        <em>Price:</em> 
+        @String.Format("{0:F}", Model.Price)
+    </p>
+    <p class="button"> 
+        @Html.ActionLink("Add to cart", "AddToCart",
+        "ShoppingCart", new { id = Model.CarId }, "")
+    </p>
+</div>
