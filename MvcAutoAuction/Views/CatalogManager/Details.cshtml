@@ -1,0 +1,40 @@
+﻿@model MvcAutoAuction.Models.Car
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>Car</legend>
+
+    <div class="display-label">Brand</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Brand.Name)
+    </div>
+
+    <div class="display-label">Auto</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Auto.Name)
+    </div>
+
+    <div class="display-label">Title</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Title)
+    </div>
+
+    <div class="display-label">Price</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Price)
+    </div>
+
+    <div class="display-label">CarArtUrl</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.CarArtUrl)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.CarId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

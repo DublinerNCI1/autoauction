@@ -1,0 +1,11 @@
+﻿@model IEnumerable<MvcAutoAuction.Models.Brand>
+
+<ul id="categories">
+    @foreach (var brand in Model)
+    {
+        <li>@Html.ActionLink(brand.Name,
+                "Browse", "Catalog",
+                new { Brand = brand.Name }, null)              
+        </li>    
+    }         
+</ul>
