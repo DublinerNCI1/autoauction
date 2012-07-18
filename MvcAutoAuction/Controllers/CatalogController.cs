@@ -9,28 +9,29 @@ namespace MvcAutoAuction.Controllers
 {
     public class CatalogController : Controller
     {
-        //
-        // GET: /Catalog/
-
         AutoAuctionEntities catalogDB = new AutoAuctionEntities();
+
+        //
+        // GET: /Catalog/        
 
         public ActionResult Index()
         {
             var brands = catalogDB.Brands.ToList();
             {
-                new Brand { Name = "BMW"};
-                new Brand { Name = "Mercedes"};
-                new Brand { Name = "VW"};
-                new Brand { Name = "Audi"};
-                new Brand { Name = "Ford"};
-                new Brand { Name = "Fiat"};
-                new Brand { Name = "Honda"};
-                new Brand { Name = "Toyota"};
-                new Brand { Name = "Mazda"};
+                new Brand { Name = "BMW" };
+                new Brand { Name = "Mercedes" };
+                new Brand { Name = "VW" };
+                new Brand { Name = "Audi" };
+                new Brand { Name = "Ford" };
+                new Brand { Name = "Fiat" };
+                new Brand { Name = "Honda" };
+                new Brand { Name = "Toyota" };
+                new Brand { Name = "Mazda" };
                 new Brand { Name = "Hyunday" };
             };
 
             return View(brands);
+            
         }
 
 
@@ -41,7 +42,7 @@ namespace MvcAutoAuction.Controllers
         {
             //Retrieve Brand and its Associated Cars from database
             var brandModel = catalogDB.Brands.Include("Cars")
-                .Single(g => g.Name == brand);
+                .Single(b => b.Name == brand);
 
             return View(brandModel); ;
         }
@@ -52,9 +53,10 @@ namespace MvcAutoAuction.Controllers
         public ActionResult Details(int id)
         {
             var car = catalogDB.Cars.Find(id);
-                                  
+
             return View(car);
         }
+
 
         //
         // GET: /Catalog/BrandMenu
@@ -65,6 +67,8 @@ namespace MvcAutoAuction.Controllers
             var brands = catalogDB.Brands.ToList();
 
             return PartialView(brands);
-        }
+        }              
     }
 }
+
+

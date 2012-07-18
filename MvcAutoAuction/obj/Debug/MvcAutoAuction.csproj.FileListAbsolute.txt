@@ -5,3 +5,5 @@ C:\Users\cezar\MvcAA\MvcAutoAuction1\MvcAutoAuction\bin\EntityFramework.xml
 C:\Users\cezar\MvcAA\MvcAutoAuction1\MvcAutoAuction\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\cezar\MvcAA\MvcAutoAuction1\MvcAutoAuction\obj\Debug\MvcAutoAuction.dll
 C:\Users\cezar\MvcAA\MvcAutoAuction1\MvcAutoAuction\obj\Debug\MvcAutoAuction.pdb
+C:\Users\cezar\Desktop\BsnPlan\Enterprise1\MvcAutoAuction\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\cezar\Desktop\BsnPlan\Enterprise1\MvcAutoAuction\obj\Debug\MvcAutoAuction.dll

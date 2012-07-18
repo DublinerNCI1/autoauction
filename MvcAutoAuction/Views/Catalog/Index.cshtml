@@ -11,9 +11,12 @@
 <ul>
     @foreach (var brand in Model)
     {
-        <li>@Html.ActionLink(brand.Name, "Browse", new { brand = brand.Name })</li>
+             
+             
+        <li>@Html.ActionLink(brand.Name, "Browse", new { brand = brand.Name })</li>              
         
-      /*  <li><a href="/Catalog/Browse?brand=BMW">BMW</a></li>
+        
+        /* <li><a href="/Catalog/Browse?brand=BMW">BMW</a></li>
         <li><a href="/Catalog/Browse?brand=Mercedes">Mercedes</a></li>
         <li><a href="/Catalog/Browse?brand=VW">VW</a></li>
         <li><a href="/Catalog/Browse?brand=Audi">Audi</a></li>                
@@ -22,6 +25,7 @@
         <li><a href="/Catalog/Browse?brand=Honda">Honda</a></li>
         <li><a href="/Catalog/Browse?brand=Toyota">Toyota</a></li>
         <li><a href="/Catalog/Browse?brand=Mazda">Mazda</a></li>
-        <li><a href="/Catalog/Browse?brand=Hyunday">Hyunday</a></li>  */      
-    }    
+        <li><a href="/Catalog/Browse?brand=Hyunday">Hyunday</a></li> */
+    }       
+       
 </ul>

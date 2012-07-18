@@ -1,7 +1,5 @@
-﻿// using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-// using System.Web;
 using System.Web.Mvc;
 using MvcAutoAuction.Models;
 
@@ -30,6 +28,8 @@ namespace MvcAutoAuction.Controllers
                 .OrderByDescending(c => c.OrderDetails.Count())
                 .Take(count)
                 .ToList();
-        }
+        }              
     }
 }
+    
+

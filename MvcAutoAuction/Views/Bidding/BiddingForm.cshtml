@@ -1,0 +1,21 @@
+﻿@model MvcAutoAuction.Models.Bid
+@{
+Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+<title>BiddingForm</title>
+</head>
+<body>
+  @using (Html.BeginForm()) {
+    @Html.ValidationSummary()
+    <p>Your name: @Html.TextBoxFor(x => x.Name) </p>
+    <p>Your email: @Html.TextBoxFor(x => x.Email)</p>
+    <p>Your phone: @Html.TextBoxFor(x => x.Phone)</p>
+    <p>Your Bid: @Html.TextBoxFor(x => x.PlaceBid)</p>
+
+<input type="submit" value="Place Your Bid" />
+}
+</body>
+</html>

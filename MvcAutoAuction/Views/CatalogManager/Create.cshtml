@@ -46,6 +46,30 @@
             @Html.ValidationMessageFor(model => model.Price)
         </div>
 
+        <!-- <div class="editor-label">
+            Html.LabelFor(model => model.IntroPrice)
+        </div>
+        <div class="editor-field">
+            Html.EditorFor(model => model.IntroPrice)
+            Html.ValidationMessageFor(model => model.IntroPrice)
+        </div>
+
+        <div class="editor-label">
+            Html.LabelFor(model => model.ExpiryDate)
+        </div>
+        <div class="editor-field">
+            Html.EditorFor(model => model.ExpiryDate)
+            Html.ValidationMessageFor(model => model.ExpiryDate)
+        </div> -->
+
+        <!--<div class="editor-label">
+            Html.LabelFor(model => model.ExpiryDate)
+        </div>
+        <div class="editor-field">
+           Html.TextBox("ExpiryDate", String.Format("{0:ddd, dd MMM yyyy}", DateTime.Now), new { id = "expirydate" })
+           Html.ValidationMessageFor(model => model.ExpiryDate)
+        </div> -->       
+             
         <div class="editor-label">
             @Html.LabelFor(model => model.CarArtUrl)
         </div>

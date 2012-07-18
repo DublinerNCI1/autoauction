@@ -1,7 +1,7 @@
 ﻿@model MvcAutoAuction.Models.Car
 
 @{
-    ViewBag.Title = "Car -" + Model.Title; ;
+    ViewBag.Title = "Car -" + Model.Title; 
 }
 
 <h2>@Model.Title</h2>
@@ -22,9 +22,18 @@
     <p>
         <em>Price:</em> 
         @String.Format("{0:F}", Model.Price)
-    </p>
+    </p> 
+              
     <p class="button"> 
         @Html.ActionLink("Add to cart", "AddToCart",
         "ShoppingCart", new { id = Model.CarId }, "")
     </p>
+
+    <p>
+     
+        <!-- Please go to Html.ActionLink("Bidding", "BiddingForm") -->
+        Please click <a href="@Url.Content("~/Bidding/BiddingForm.cshtml")">here</a> to place Your Bid!
+        <!-- Html.ActionLink("Place Your Bid", "BiddingForm") -->
+    </p>
+
 </div>

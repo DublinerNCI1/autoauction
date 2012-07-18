@@ -1,10 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿// using System;
+// using System.Linq;
+// using System.Web;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
+using System.Collections.Generic;
 
 namespace MvcAutoAuction.Models
 {
@@ -19,16 +19,35 @@ namespace MvcAutoAuction.Models
 
         [DisplayName("Auto")]
         public int AutoId { get; set; }
-        
+
         [Required(ErrorMessage = "Car Title is required")]
         [StringLength(160)]
         public string Title { get; set; }
-
-        [Required(ErrorMessage = "Price is required")]
-        [Range (0.01, 100000.00,
-            ErrorMessage = "Price must be between 0.01 and 100000.00")]
+                
+        [Required(ErrorMessage = "Price")]
+        [Range(100.00, 100000.00,
+            ErrorMessage = "Price must be between 100.00 and 100000.00")]
         public decimal Price { get; set; }
 
+        // [Required(ErrorMessage = "Introductory Price")]
+        // [StringLength(160)]
+        // public string IntroPrice { get; set; }
+
+        // [Required(ErrorMessage = "Expiry Date")]
+        // [StringLength(160)]
+        // public string ExpiryDate { get; set; }
+
+        
+        // [Required(ErrorMessage = "Introductory Price is required")]
+        // [Range(100.00, 100000.00,
+        //    ErrorMessage = "Price must be between 100.00 and 100000.00")]
+        // public decimal IntroPrice { get; set; }        
+
+        // [DisplayName("Expiry Date")]
+        // [Required(ErrorMessage = "Vehicle Ad Expiry Date")]
+        // [DisplayFormat(DataFormatString = "{0:ddd, dd MMM yyyy}", ApplyFormatInEditMode = true)]
+        // public string ExpiryDate { get; set; }          
+                       
         [DisplayName("Car Art URL")]
         [StringLength(1024)]
         public string CarArtUrl { get; set; }
@@ -36,5 +55,5 @@ namespace MvcAutoAuction.Models
         public virtual Brand Brand                      { get; set; }
         public virtual Auto Auto                        { get; set; }
         public virtual List<OrderDetail> OrderDetails   { get; set; }
-    }
+    }    
 }
