@@ -14,9 +14,10 @@ namespace MvcAutoAuction.Controllers
 
         public ActionResult Index()
         {
-            // Get most popular cars
-            var cars = GetTopSellingCars(5);
-            return View(cars);
+         //  Get most popular cars
+             var cars = GetTopSellingCars(5);
+           
+             return View(cars);
         }
 
         private List<Car> GetTopSellingCars(int count)
@@ -25,9 +26,9 @@ namespace MvcAutoAuction.Controllers
             // the cars with the highest count
 
             return catalogDB.Cars
-                .OrderByDescending(c => c.OrderDetails.Count())
-                .Take(count)
-                .ToList();
+                 .OrderByDescending(c => c.OrderDetails.Count())
+                 .Take(count)
+                 .ToList();
         }              
     }
 }
