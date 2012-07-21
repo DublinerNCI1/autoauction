@@ -2,19 +2,18 @@
 @{
     ViewBag.Title = "ASP.NET MVC MotorBid Auto Auction Site"; 
 }
-<div id="promotion">
+<div id="elegant">
 </div>
-
+<br />
 <h3><em>Top 5</em> Cars on Sale!</h3>
-
 <ul id="car-list"> 
     @foreach (var car in Model)
     { 
         <li><a href="@Url.Action("Details", "Catalog",
                 new { id = car.CarId })">
 
-        <img alt="@car.Title" src="@car.CarArtUrl" /> 
-        <span>@car.Title</span> </a>
+        <img alt="@car.Title" src="@car.Image" /> 
+         <span>@car.Title</span></a> 
         </li>
     }
 </ul>

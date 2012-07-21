@@ -21,7 +21,7 @@ namespace MvcAutoAuction.Models
         public int AutoId { get; set; }
 
         [Required(ErrorMessage = "Car Title is required")]
-        [StringLength(160)]
+        [StringLength(16)]
         public string Title { get; set; }
                 
         [Required(ErrorMessage = "Price")]
@@ -48,9 +48,9 @@ namespace MvcAutoAuction.Models
         // [DisplayFormat(DataFormatString = "{0:ddd, dd MMM yyyy}", ApplyFormatInEditMode = true)]
         // public string ExpiryDate { get; set; }          
                        
-        [DisplayName("Car Art URL")]
+        [DisplayName("Image URL")]
         [StringLength(1024)]
-        public string CarArtUrl { get; set; }
+        public string Image { get; set; }
 
         public virtual Brand Brand                      { get; set; }
         public virtual Auto Auto                        { get; set; }

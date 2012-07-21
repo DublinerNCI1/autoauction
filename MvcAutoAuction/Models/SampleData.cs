@@ -35,16 +35,16 @@ namespace MvcAutoAuction.Models
 
             new List<Car>
             {
-                new Car { Title = "VW.Passat=>2006.04", Brand = brands.Single(b => b.Name == "VW"), Price = 8995.00M, Auto = autos.Single(a => a.Name == "Sedan"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "VW.Golf=>2005.08", Brand = brands.Single(b => b.Name == "VW"), Price = 7995.00M, Auto = autos.Single(a => a.Name == "Sedan"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "VW.Beetle=>2007.02", Brand = brands.Single(b => b.Name == "VW"), Price = 6995.00M, Auto = autos.Single(a => a.Name == "Convertible"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "VW.Caravelle=>2005.11", Brand = brands.Single(b => b.Name == "VW"), Price = 6495.00M, Auto = autos.Single(a => a.Name == "Minibus"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "Mercedes.300=>2006.10", Brand = brands.Single(b => b.Name == "Mercedes"), Price = 7995.00M, Auto = autos.Single(a => a.Name == "Sedan"), CarArtUrl = "/Content/Images/placeholder.gif" },                
-                new Car { Title = "Ford.Tranzit=>2006.05", Brand = brands.Single(b => b.Name == "Ford"), Price = 9995.00M, Auto = autos.Single(a => a.Name == "Van"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "Ford.Fiesta=>2003.12", Brand = brands.Single(b => b.Name == "Ford"), Price = 2995.00M, Auto = autos.Single(a => a.Name == "Sedan"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "Toyota.Ultima=>2005.02", Brand = brands.Single(b => b.Name == "Toyota"), Price = 8995.00M, Auto = autos.Single(a => a.Name == "Pickup"), CarArtUrl = "/Content/Images/placeholder.gif" },
-                new Car { Title = "Audi.Quattro=>2005.12", Brand = brands.Single(b => b.Name == "Audi"), Price = 7495.00M, Auto = autos.Single(a => a.Name == "Pickup"), CarArtUrl = "/Content/Images/placeholder.gif" },                
-                new Car { Title = "Audi.Coupe=>2008.05", Brand = brands.Single(b => b.Name == "Audi"), Price = 8495.00M, Auto = autos.Single(a => a.Name == "Sedan"), CarArtUrl = "/Content/Images/placeholder.gif" },
+                new Car { Title = "Passat=>2006", Brand = brands.Single(b => b.Name == "VW"), Price = 8995.00M, Auto = autos.Single(a => a.Name == "Sedan"), Image = "/Content/Images/passat.JPG" },
+                new Car { Title = "Golf=>2005", Brand = brands.Single(b => b.Name == "VW"), Price = 7995.00M, Auto = autos.Single(a => a.Name == "Sedan"), Image = "/Content/Images/golf.JPG" },
+                new Car { Title = "Beetle=>2007", Brand = brands.Single(b => b.Name == "VW"), Price = 6995.00M, Auto = autos.Single(a => a.Name == "Convertible"), Image = "/Content/Images/beetle.JPG" },
+                new Car { Title = "Caravelle=>2005", Brand = brands.Single(b => b.Name == "VW"), Price = 6495.00M, Auto = autos.Single(a => a.Name == "Minibus"), Image = "/Content/Images/caravelle.JPG" },
+                new Car { Title = "SL320=>2006", Brand = brands.Single(b => b.Name == "Mercedes"), Price = 7995.00M, Auto = autos.Single(a => a.Name == "Sedan"), Image = "/Content/Images/mercedes.JPG" },                
+                new Car { Title = "Tranzit=>2006", Brand = brands.Single(b => b.Name == "Ford"), Price = 9995.00M, Auto = autos.Single(a => a.Name == "Van"), Image = "/Content/Images/tranzit.JPG" },
+                new Car { Title = "Fiesta=>2003", Brand = brands.Single(b => b.Name == "Ford"), Price = 2995.00M, Auto = autos.Single(a => a.Name == "Sedan"), Image = "/Content/Images/fiesta.JPG" },
+                new Car { Title = "Camry=>2005", Brand = brands.Single(b => b.Name == "Toyota"), Price = 8995.00M, Auto = autos.Single(a => a.Name == "Pickup"), Image = "/Content/Images/toyota.JPEG" },
+                new Car { Title = "Quattro=>2005", Brand = brands.Single(b => b.Name == "Audi"), Price = 7495.00M, Auto = autos.Single(a => a.Name == "Pickup"), Image = "/Content/Images/quattro.JPG" },                
+                new Car { Title = "TT=>2008", Brand = brands.Single(b => b.Name == "Audi"), Price = 8495.00M, Auto = autos.Single(a => a.Name == "Sedan"), Image = "/Content/Images/coupe.JPG" },
                     
                           
             }.ForEach(a => context.Cars.Add(a));
