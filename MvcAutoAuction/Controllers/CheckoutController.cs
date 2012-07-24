@@ -38,7 +38,7 @@ namespace MvcAutoAuction.Controllers
 
                 else
                 {
-                    order.Username = User.Identity.Name;
+                    order.UserName = User.Identity.Name;
                     order.OrderDate = DateTime.Now;
 
                     //Save Order
@@ -70,7 +70,7 @@ namespace MvcAutoAuction.Controllers
             // Validate customer owns this order
             bool isValid = catalogDB.Orders.Any(
             o => o.OrderId == id &&
-            o.Username == User.Identity.Name);
+            o.UserName == User.Identity.Name);
 
             if (isValid)
             {

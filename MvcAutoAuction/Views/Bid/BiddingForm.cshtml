@@ -1,0 +1,24 @@
+﻿@model MvcAutoAuction.Models.Bid
+
+@{
+    ViewBag.Title = "BiddingForm";
+}
+
+<h2></h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+
+@using (Html.BeginForm()) {
+    
+    <h2>Bidding Form</h2>
+    <fieldset>
+
+        <legend>Car Ad Expiry Date - 31 of July, 2012</legend>
+
+        @Html.EditorForModel()
+        </fieldset>        
+        
+  <input type="submit" value="Submit Your Bid" />            
+}
+
