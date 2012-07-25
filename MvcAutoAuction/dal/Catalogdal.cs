@@ -33,25 +33,27 @@ namespace MvcAutoAuction.dal
         }
 
 
-        public Brand browseBrand(string brand)
-        {
-            var brandModel = catalogDB.Brands.Include("Cars")
-                   .Single(b => b.Name == brand);
-            return (brandModel);
-        }
+
+    public Brand browseBrand(string brand){
+        var brandModel = catalogDB.Brands.Include("Cars")
+               .Single(b => b.Name == brand);
+        return (brandModel);
+    }
 
 
-        public Car findCarsbyID(int id)
-        {
-            var car = catalogDB.Cars.Find(id);
-            return (car);
-        }
+    public Car findCarsbyID(int id)
+    {
+    var car = catalogDB.Cars.Find(id);
+    return(car);
+    }
 
-        public List<Brand> brandsToListing()
-        {
-            var brands = catalogDB.Brands.ToList();
-            return (brands);
-        }
+    public List<Brand> brandsToListing()
+    {
+        var brands = catalogDB.Brands.ToList();
+        return (brands);
+    }
+
 
     }
+
 }

@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Web.Mvc;
 using MvcAutoAuction.Models;
+using MvcAutoAuction.logic;
+using MvcAutoAuction.dal;
 
 namespace MvcAutoAuction.Controllers
 {
@@ -42,8 +44,11 @@ namespace MvcAutoAuction.Controllers
                     order.OrderDate = DateTime.Now;
 
                     //Save Order
-                    catalogDB.Orders.Add(order);
-                    catalogDB.SaveChanges();
+                    /*catalogDB.Orders.Add(order);
+                    catalogDB.SaveChanges();*/
+
+                    CheckoutDAL dal = new CheckoutDAL();
+                    dal.addOrder(order);
 
                     //Process the order
                     var cart = ShoppingCart.GetCart(this.HttpContext);

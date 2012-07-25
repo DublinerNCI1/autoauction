@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Mvc;
 using MvcAutoAuction.Models;
+using MvcAutoAuction.dal;
 
 namespace MvcAutoAuction.Controllers
 {
@@ -14,13 +15,21 @@ namespace MvcAutoAuction.Controllers
 
         public ActionResult Index()
         {
-         //  Get most popular cars
-             var cars = GetTopSellingCars(5);
-           
-             return View(cars);
-        }
+            /*if (catalogDB.Database.Exists())
+            {*/
 
-        private List<Car> GetTopSellingCars(int count)
+                //  Get most popular cars
+                HomeDAL dal = new HomeDAL();
+                var cars = dal.GetTopSellingCars(5);
+
+                return View(cars);
+
+            /*}*/
+            /*else catalogDB.Database.Create();
+            return View();*/
+        }
+        
+        /*private List<Car> GetTopSellingCars(int count)
         {
             // Group the order details by car and return
             // the cars with the highest count
@@ -29,7 +38,7 @@ namespace MvcAutoAuction.Controllers
                  .OrderByDescending(c => c.OrderDetails.Count())
                  .Take(count)
                  .ToList();
-        }              
+        } */             
     }
 }
     

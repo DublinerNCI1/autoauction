@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcAutoAuction.Models;
+using MvcAutoAuction.dal;
 
 namespace MvcAutoAuction.Controllers
 { 
@@ -19,8 +20,11 @@ namespace MvcAutoAuction.Controllers
 
         public ViewResult Index()
         {
-            var cars = db.Cars.Include(c => c.Brand).Include(c => c.Auto);
-            return View(cars.ToList());
+            /*var cars = db.Cars.Include(c => c.Brand).Include(c => c.Auto);
+            return View(cars.ToList());*/
+            CatalogManagerDAL dal = new CatalogManagerDAL();
+            var cars = dal.indexCars();
+            return View(cars);
         }
 
         //
@@ -28,7 +32,9 @@ namespace MvcAutoAuction.Controllers
 
         public ViewResult Details(int id)
         {
-            Car car = db.Cars.Find(id);
+            /*Car car = db.Cars.Find(id);*/
+            CatalogManagerDAL dal = new CatalogManagerDAL();
+            Car car = dal.details(id);
             return View(car);
         }
 
@@ -37,8 +43,14 @@ namespace MvcAutoAuction.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name");
-            ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name");
+            /*ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name");
+            ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name");*/
+            CatalogManagerDAL dal = new CatalogManagerDAL();
+            List<SelectList> id = dal.create();
+            
+            ViewBag.BrandId = id[0];
+            ViewBag.AutoId = id[1];
+ 
             return View();
         } 
 
@@ -50,13 +62,20 @@ namespace MvcAutoAuction.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Cars.Add(car);
-                db.SaveChanges();
+                CatalogManagerDAL dal = new CatalogManagerDAL();
+                dal.createStore(car);
                 return RedirectToAction("Index");  
             }
 
-            ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name", car.BrandId);
+           /* ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name", car.BrandId);
             ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name", car.AutoId);
+            return View(car);*/
+            CatalogManagerDAL dal2 = new CatalogManagerDAL();
+            List<SelectList> id = dal2.create();
+
+            ViewBag.BrandId = id[0];
+            ViewBag.AutoId = id[1];
+
             return View(car);
         }
         
@@ -65,9 +84,18 @@ namespace MvcAutoAuction.Controllers
  
         public ActionResult Edit(int id)
         {
-            Car car = db.Cars.Find(id);
+            /*Car car = db.Cars.Find(id);
             ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name", car.BrandId);
-            ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name", car.AutoId);
+            ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name", car.AutoId);*/
+            CatalogManagerDAL dal = new CatalogManagerDAL();
+            Car car = dal.edit(id);
+
+            CatalogManagerDAL dal2 = new CatalogManagerDAL();
+            List<SelectList> id2 = dal2.create();
+
+            ViewBag.BrandId = id2[0];
+            ViewBag.AutoId = id2[1];
+            
             return View(car);
         }
 
@@ -81,10 +109,19 @@ namespace MvcAutoAuction.Controllers
             {
                 db.Entry(car).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+               /* CatalogManagerDAL dal = new CatalogManagerDAL();
+                dal.editStore(car);
+                return RedirectToAction("Index");*/
             }
-            ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name", car.BrandId);
-            ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name", car.AutoId);
+            /*ViewBag.BrandId = new SelectList(db.Brands, "BrandId", "Name", car.BrandId);
+            ViewBag.AutoId = new SelectList(db.Autos, "AutoId", "Name", car.AutoId);*/
+
+            CatalogManagerDAL dal2 = new CatalogManagerDAL();
+            List<SelectList> id = dal2.create();
+
+            ViewBag.BrandId = id[0];
+            ViewBag.AutoId = id[1];
+
             return View(car);
         }
 
@@ -93,7 +130,10 @@ namespace MvcAutoAuction.Controllers
  
         public ActionResult Delete(int id)
         {
-            Car car = db.Cars.Find(id);
+            
+            /*Car car = db.Cars.Find(id);*/
+            CatalogManagerDAL dal = new CatalogManagerDAL();
+            Car car = dal.delete(id);
             return View(car);
         }
 
@@ -103,9 +143,11 @@ namespace MvcAutoAuction.Controllers
         [HttpPost, ActionName("Delete")]
         public ActionResult DeleteConfirmed(int id)
         {            
-            Car car = db.Cars.Find(id);
+            /*Car car = db.Cars.Find(id);
             db.Cars.Remove(car);
-            db.SaveChanges();
+            db.SaveChanges();*/
+            CatalogManagerDAL dal = new CatalogManagerDAL();
+            dal.deleteConfirm(id);
             return RedirectToAction("Index");
         }
 

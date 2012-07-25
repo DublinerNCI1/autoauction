@@ -2,6 +2,8 @@
 using System.Web.Mvc;
 using MvcAutoAuction.Models;
 using MvcAutoAuction.ViewModels;
+using MvcAutoAuction.logic;
+using MvcAutoAuction.dal;
 
 namespace MvcAutoAuction.Controllers
 {
@@ -29,10 +31,14 @@ namespace MvcAutoAuction.Controllers
             public ActionResult AddToCart(int id)
         {
             // Retrieve the car from the database
-            var addedCar = catalogDB.Cars
-            .Single(car => car.CarId == id);
+           // var addedCar = catalogDB.Cars
+           // .Single(car => car.CarId == id);
             // Add it to the shopping cart
+            ShoppingCartDAL dal = new ShoppingCartDAL();
+            var addedCar = dal.retrieveCar(id);
+
             var cart = ShoppingCart.GetCart(this.HttpContext);
+
             cart.AddToCart(addedCar);
             // Go back to the main store page for more shopping
             return RedirectToAction("Index");
@@ -46,8 +52,13 @@ namespace MvcAutoAuction.Controllers
             // Remove the item from the cart
             var cart = ShoppingCart.GetCart(this.HttpContext);
             // Get the name of the car to display confirmation
-            string carName = catalogDB.Carts
-            .Single(item => item.RecordId == id).Car.Title;
+            /*string carName = catalogDB.Carts
+            .Single(item => item.RecordId == id).Car.Title;*/
+
+            ShoppingCartDAL dal = new ShoppingCartDAL();
+            string carName = dal.getCarName(id);
+
+
             // Remove from cart
             int itemCount = cart.RemoveFromCart(id);
             // Display the confirmation message

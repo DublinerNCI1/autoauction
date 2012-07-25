@@ -7,6 +7,7 @@ using System.Web.Routing;
 using System.Web.Security;
 using Mvc3ToolsUpdateWeb_Default.Models;
 using MvcAutoAuction.Models;
+using MvcAutoAuction.logic;
 
 namespace Mvc3ToolsUpdateWeb_Default.Controllers
 {

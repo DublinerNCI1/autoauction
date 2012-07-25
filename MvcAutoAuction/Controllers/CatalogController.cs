@@ -17,24 +17,24 @@ namespace MvcAutoAuction.Controllers
 
         public ActionResult Index()
         {
-            /* var brands = catalogDB.Brands.ToList();
-             {
-                 new Brand { Name = "BMW" };
-                 new Brand { Name = "Mercedes" };
-                 new Brand { Name = "VW" };
-                 new Brand { Name = "Audi" };
-                 new Brand { Name = "Ford" };
-                 new Brand { Name = "Fiat" };
-                 new Brand { Name = "Honda" };
-                 new Brand { Name = "Toyota" };
-                 new Brand { Name = "Mazda" };
-                 new Brand { Name = "Hyunday" };
-             };*/
+           /* var brands = catalogDB.Brands.ToList();
+            {
+                new Brand { Name = "BMW" };
+                new Brand { Name = "Mercedes" };
+                new Brand { Name = "VW" };
+                new Brand { Name = "Audi" };
+                new Brand { Name = "Ford" };
+                new Brand { Name = "Fiat" };
+                new Brand { Name = "Honda" };
+                new Brand { Name = "Toyota" };
+                new Brand { Name = "Mazda" };
+                new Brand { Name = "Hyunday" };
+            };*/
 
             CatalogDAL dal = new CatalogDAL();
             var brands = dal.BrandsToList();
             return View(brands);
-
+            
         }
 
 
@@ -47,7 +47,7 @@ namespace MvcAutoAuction.Controllers
             /*var brandModel = catalogDB.Brands.Include("Cars")
                 .Single(b => b.Name == brand);*/
             CatalogDAL dal = new CatalogDAL();
-            var brandModel = dal.browseBrand(brand);
+            var brandModel = dal.browseBrand(brand); 
             return View(brandModel); ;
         }
 
@@ -56,7 +56,7 @@ namespace MvcAutoAuction.Controllers
 
         public ActionResult Details(int id)
         {
-            /* var car = catalogDB.Cars.Find(id);*/
+           /* var car = catalogDB.Cars.Find(id);*/
             CatalogDAL dal = new CatalogDAL();
             var car = dal.findCarsbyID(id);
 
@@ -73,10 +73,10 @@ namespace MvcAutoAuction.Controllers
             /*var brands = catalogDB.Brands.ToList();*/
 
             CatalogDAL dal = new CatalogDAL();
-            var brands = dal.brandsToListing();
+            var brands = dal.BrandsToList();
 
             return PartialView(brands);
-        }
+        }              
     }
 }
 
