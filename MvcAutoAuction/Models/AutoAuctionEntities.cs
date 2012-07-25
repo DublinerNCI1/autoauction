@@ -13,6 +13,7 @@ namespace MvcAutoAuction.Models
         public DbSet<Auto>  Autos { get; set; }                
         public DbSet<Cart>  Carts { get; set; }
         public DbSet<Order> Orders { get; set; }   
-        public DbSet<OrderDetail> OrderDetails { get; set; }        
+        public DbSet<OrderDetail> OrderDetails { get; set; }
+        public DbSet<Bid> Bids { get; set; }        
     }
 }

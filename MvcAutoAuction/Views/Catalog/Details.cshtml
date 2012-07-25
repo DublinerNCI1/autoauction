@@ -29,11 +29,12 @@
         "ShoppingCart", new { id = Model.CarId }, "")
     </p>
 
-    <p>
-     
-        <!-- Please go to Html.ActionLink("Bidding", "BiddingForm") -->
+    <p>         
+         Please click <a href="@Url.Content("~/bid/biddingform")">here</a> to place Your Bid!         
+    </p>  
         <!-- Please click here Html.ActionLink("BiddingForm", "Bidding")  to place Your Bid! -->
         <!-- Html.ActionLink("Place Your Bid", "BiddingForm") -->
-        <!-- <a href="Url.Content("~/Bidding/BiddingForm.cshtml")">here</a> -->
-    </p>
+        <!-- Please click Html.ActionLink("here", "Bid") to place Your Bid! -->   
+        <!--Please click the following link Html.ActionLink("Bid >>", "bid", "biddingForm") to place Your Bid! -->
+          
 </div>

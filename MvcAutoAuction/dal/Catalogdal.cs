@@ -9,9 +9,28 @@ namespace MvcAutoAuction.dal
 {
     public class CatalogDAL
     {
-
+        // protected AccessDB db = new AccessDB();
 
         AutoAuctionEntities catalogDB = new AutoAuctionEntities();
+
+        //add brands
+     /*   public bool addBrandToDb(Brand b)
+        {
+            Brand b = new Brand();
+
+        b=catalogDB.Brands.Add(b);
+          if (b is Brand)
+
+          {
+              catalogDB.SaveChanges();
+
+            return true;
+          }
+            return false;
+          }
+
+
+        brands */
 
         public List<Brand> BrandsToList()
         {
